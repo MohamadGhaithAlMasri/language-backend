@@ -575,6 +575,10 @@ app.post('/api/questions', (req, res) => {
   }
 });
 
-app.listen(PORT, '0.0.0.0', () => {
-  console.log(`Backend server running on port ${PORT} (listening on all interfaces)`);
-});
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, '0.0.0.0', () => {
+    console.log(`Backend server running on port ${PORT} (listening on all interfaces)`);
+  });
+}
+
+module.exports = app;
