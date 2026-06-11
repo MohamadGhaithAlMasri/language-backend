@@ -191,7 +191,7 @@ async function saveResult(result) {
             score: Number(result.score),
             correctCount: Number(result.correctCount),
             incorrectCount: Number(result.incorrectCount),
-            timeTaken: Number(result.timeTaken)
+            timeTaken: String(result.timeTaken)
           }
         ]);
       if (error) throw error;
